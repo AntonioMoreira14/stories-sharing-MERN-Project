@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.homepage {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ),
+  url("https://img.freepik.com/free-photo/minimal-work-space-creative-flat-lay-photo-workspace-desk-with-sketchbook-wooden-pencil-copy-space-white-background-top-view-flat-lay-photography_1253-995.jpg?t=st=1658165912~exp=1658166512~hmac=5a59a0f1939428dfa1d6809380eb13b87d2d69c0f87b741cc34fb8b3806531eb&w=740");
+  background-size: cover;
+}
+
+.homepage-title {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  text-align: center;
+  color:#4569b6;
+  text-shadow: 1px 1px 2px rgb(148, 145, 163);
+  background-color: #00a0fd2c;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 634px) {
+  .homepage-title {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
