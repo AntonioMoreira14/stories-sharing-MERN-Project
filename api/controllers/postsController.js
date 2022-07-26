@@ -38,7 +38,7 @@ const updatePost = (req, res) => {
 const deletePost = (req, res) => {
   Post.findByIdAndDelete(req.params.id)
     .then(() => res.json('Post was deleted!'))
-    .catch(err => res.status(400).json('Error: ' + err))
+    .catch(err => res.status(400).json(err))
 }
 
 module.exports = {
