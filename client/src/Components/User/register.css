@@ -47,3 +47,24 @@
   border-radius: 10px;
   padding: 10px;
 }
+
+@media screen and (max-height: 414px) {
+  .register {
+    height: 100%;
+  }
+  .register-title {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .register-form > label {
+    margin: 6px 0;
+  }
+  .input-register {
+    padding: 6px;
+  }
+  .register-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import './navbar.css'
 import navbar_logo from '../../Images/navbar_logo.png'
 
-export default function Hello() {
+export default function Navbar() {
   const { userInfo, setUserInfo } = useContext(UserContext)
 
   function logoutHandler () {
@@ -24,7 +24,7 @@ export default function Hello() {
       {userInfo.username ? (
         <div className='link-auth'>
           <Link to='/post' className='link-create-post'>Create Post</Link>
-          <Link to='/profile' className='link-user'>Hello, {userInfo.username.username}!</Link>
+          <Link to='/userpage' className='link-user'>Hello, {userInfo.username.username}!</Link>
           <Link to='/' className='link-logout' onClick={logoutHandler}>Logout</Link>
         </div>
       ) : (

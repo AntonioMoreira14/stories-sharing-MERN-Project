@@ -42,7 +42,7 @@ export default function CreatePost() {
     <div className='create-post'>
       <h2 className='create-post-title'>Share something with the others!</h2>
       <form onSubmit={handleSubmit} className='create-post-form'>
-        <label>Title</label>
+        <label>Title (Max: 24 chars)</label>
         <input 
           type="text" 
           name="title" 
@@ -65,7 +65,7 @@ export default function CreatePost() {
         {userInfo.username ? (
           <button className="create-post-btn" type="submit">Submit</button>
         ) : (
-          <p>You need to be logged in to create a new Post</p>
+          <p className='create-post-error'>You need to sign in to share something!</p>
         )}
       </form>
     </div>

@@ -3,10 +3,13 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 
-const getUser = (req, res) => {
-  User.find()
-    .then(user => res.json(user))
-    .catch(err => res.status(400).json(err))
+const getUser = async (req, res) => {
+  try {
+    const user = await User.find()
+    res.status(200).json(user)
+  } catch (err) {
+    res.status(500).json(err)
+  }
 }
 
 const createUser = async (req, res) => {
@@ -29,21 +32,18 @@ const createUser = async (req, res) => {
 
   let hashedPass = bcrypt.hashSync(req.body.password, 10)
 
-  const createUser = new User({
+  const createUser = await User.create({
     username: req.body.username,
     password: hashedPass,
     email: req.body.email
   })
 
-  createUser.save()
-  .then(() => res.json("Resgistration Completed!"))
-  .catch(err => res.status(400).json(err))
+  res.status(201).json({ createUser })
 }
 
-const getProfile = async (req, res) => {
+const getUserPage = async (req, res) => {
   const user = await User.findById(req.user._id)
   res.json({
-    id: user._id,
     username: user.username,
     email: user.email
   })
@@ -58,7 +58,7 @@ const login = async (req, res) => {
 
   bcrypt.compare(req.body.password, user.password, (err, response) => {
     if (!response) {
-      return res.status(400).send("Error: " + err)
+      return res.status(400).send({msg: "Incorrect Username/Password"})
     } else {
       const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET)
       res.json({
@@ -100,7 +100,7 @@ const tokenValid = async (req, res) => {
 module.exports = {
   getUser,
   createUser,
-  getProfile,
+  getUserPage,
   login,
   tokenValid
 }

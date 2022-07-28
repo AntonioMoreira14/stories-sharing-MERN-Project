@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-.profile {
+.userpage {
   align-items: center;
   font-family: 'Cinzel', serif;
 }
 
-.profile-title {
+.userpage-title {
   font-size: 30px;
   text-align: center;
   color:rgb(114, 112, 112);
@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.profile-info {
+.userpage-info {
   text-align: center;
   padding: 20px;
   color:rgb(114, 112, 112);

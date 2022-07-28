@@ -7,7 +7,7 @@ import CreatePost from "./Components/CreatePost/CreatePost";
 import UpdatePost from "./Components/UpdatePost/UpdatePost";
 import Register from "./Components/User/Register";
 import Login from "./Components/User/Login";
-import Profile from "./Components/User/Profile";
+import UserPage from "./Components/User/UserPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
@@ -22,14 +22,14 @@ export default function App() {
   useEffect(() => {
     const loggedIn = async () => {
       let token = localStorage.getItem("authentication-token")
-      if(token === null) {
+      if(!token) {
         localStorage.setItem("authentication-token", "")
         token = ""
       }
-      const resToken = await axios.post('/user/tokenValid', null, {headers: {"authentication-token": token}});
+      const resToken = await axios.post('/user/tokenValid', '', {headers: {"authentication-token": token}});
       
       if(resToken.data) {
-        const resUser = await axios.get('/user/profile', {headers: {'authentication-token': token}});
+        const resUser = await axios.get('/user/userpage', {headers: {'authentication-token': token}});
         setUserInfo({
           token: token,
           username: resUser.data,
@@ -51,7 +51,7 @@ export default function App() {
             <Route path='/posts/:id' element={<UpdatePost />}/>
             <Route path='/register' element={<Register />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/profile' element={<Profile />}/>
+            <Route path='/userpage' element={<UserPage />}/>
         </Routes>
       </Router>
     </UserContext.Provider>

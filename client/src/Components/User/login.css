@@ -47,3 +47,19 @@
   border-radius: 10px;
   padding: 10px;
 }
+
+@media screen and (max-height: 414px) {
+  .login-title {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .login-form > label {
+    margin: 6px 0;
+  }
+  .input-login {
+    padding: 8px;
+  }
+  .login-btn {
+    padding: 8px;
+  }
+}

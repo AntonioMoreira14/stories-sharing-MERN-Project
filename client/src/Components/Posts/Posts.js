@@ -42,7 +42,7 @@ export default function Posts() {
                 <b>{post.title}</b>
               </Link>
               <li className='posts-desc'>{post.desc}</li>
-              <li><b>Added by user: {post.user}</b></li>
+              <li><b>User: {post.user}</b></li>
             </div>)
           })}
       </ul>

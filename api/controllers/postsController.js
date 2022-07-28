@@ -1,9 +1,12 @@
 const Post = require('../models/Post')
 
-const getPosts = (req, res) => {
-  Post.find()
-    .then(post => res.json(post))
-    .catch(err => res.status(400).json(err))
+const getPosts = async (req, res) => {
+  try {
+    const posts = await Post.find()
+    res.status(200).json(posts)
+  } catch (err) {
+    res.status(500).json(err)
+  }
 }
 
 const getSinglePost = async (req, res) => {
@@ -16,29 +19,33 @@ const getSinglePost = async (req, res) => {
   }
 }
 
-const createPost = (req, res) => {
-
-  const newPost = new Post({
+const createPost = async (req, res) => {
+  const newPost = await Post.create({
     title: req.body.title,
     desc: req.body.desc,
     user: req.body.user
-  });
-
-  newPost.save()
-    .then(() => res.json("A new post was added!"))
-    .catch((err) => res.status(400).json(err));
+  })
+  res.status(201).json({ newPost })
 }
 
-const updatePost = (req, res) => {
-  Post.findByIdAndUpdate(req.params.id, {$set: req.body})
-  .then(() => res.json('The Post was updated!'))
-  .catch(err => res.status(400).json(err))
+const updatePost = async (req, res) => {
+  try {
+    const putPost = await Post.findByIdAndUpdate(req.params.id, {$set: req.body})
+  
+    res.status(200).json({ putPost })
+  } catch (err) {
+    res.status(404).json(err)
+  }
 }
 
-const deletePost = (req, res) => {
-  Post.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Post was deleted!'))
-    .catch(err => res.status(400).json(err))
+const deletePost = async (req, res) => {
+  try {
+    const delPost = await Post.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({ delPost });
+  } catch (err) {
+    res.status(404).json(err)
+  }
 }
 
 module.exports = {

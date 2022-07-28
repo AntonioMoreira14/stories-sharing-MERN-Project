@@ -28,7 +28,7 @@ export default function Login() {
       username: "",
       password: ""
     });
-    window.location='/profile'
+    window.location='/userpage'
     } catch (err) {
       err.response.data.msg ?
       setError(err.response.data.msg) :

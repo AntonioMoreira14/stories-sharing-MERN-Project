@@ -56,6 +56,17 @@
   padding: 10px;
 }
 
+.create-post-error {
+  color: red;
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+}
+
 @media screen and (max-height: 414px) {
   .create-post-title {
     font-size: 20px;
