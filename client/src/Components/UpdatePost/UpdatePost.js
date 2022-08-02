@@ -40,7 +40,6 @@ export default function UpdatePost() {
       headers: {
         "authentication-token": userInfo.token
       }})
-    .then(window.location = "/posts")
   }
 
   function handleDelete() {
@@ -49,7 +48,6 @@ export default function UpdatePost() {
       headers: {
         "authentication-token": userInfo.token
       }})
-    .then(window.location = "/posts")
   }
 
   return (

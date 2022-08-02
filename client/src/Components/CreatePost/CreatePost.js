@@ -21,7 +21,7 @@ export default function CreatePost() {
         headers: {
           "authentication-token": userInfo.token
         }})
-      .then(window.location = '/posts')
+        
       setNewPost({
         title: "",
         desc:""
