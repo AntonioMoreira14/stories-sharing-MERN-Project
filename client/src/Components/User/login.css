@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-.login{
+.login {
   height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
@@ -49,6 +49,9 @@
 }
 
 @media screen and (max-height: 414px) {
+  .login {
+    height: 100%;
+  }
   .login-title {
     margin-top: 10px;
     font-size: 30px;

@@ -9,7 +9,7 @@ import Register from "./Components/User/Register";
 import Login from "./Components/User/Login";
 import UserPage from "./Components/User/UserPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { axiosInstance } from "./utils";
 
 export default function App() {
   
@@ -26,10 +26,10 @@ export default function App() {
         localStorage.setItem("authentication-token", "")
         token = ""
       }
-      const resToken = await axios.post('/user/tokenValid', '', {headers: {"authentication-token": token}});
+      const resToken = await axiosInstance.post('/user/tokenValid', '', {headers: {"authentication-token": token}});
       
       if(resToken.data) {
-        const resUser = await axios.get('/user/userpage', {headers: {'authentication-token': token}});
+        const resUser = await axiosInstance.get('/user/userpage', {headers: {'authentication-token': token}});
         setUserInfo({
           token: token,
           username: resUser.data,

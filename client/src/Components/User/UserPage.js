@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
 import UserContext from '../../Context/Context'
-import axios from "axios"
 import { Link } from "react-router-dom"
 import './userpage.css'
+import { axiosInstance } from '../../utils'
 
 export default function UserPage() {
   const {userInfo, setUserInfo} = useContext(UserContext)
@@ -10,7 +10,7 @@ export default function UserPage() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('/posts')
+    axiosInstance.get('/posts')
     .then(res => setPosts(res.data))
   },[])
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './posts.css'
-import axios from 'axios'
 import { Link } from "react-router-dom"
+import { axiosInstance } from '../../utils';
 
 export default function Posts() {
 
@@ -9,7 +9,7 @@ export default function Posts() {
   const [searchPost, setSearchPost] = useState('')
 
   useEffect(() => {
-    axios.get('/posts')
+    axiosInstance.get('/posts')
     .then(res => setPosts(res.data))
   },[])
   

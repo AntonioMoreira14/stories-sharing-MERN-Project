@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
-import axios from "axios"
 import { useLocation } from 'react-router-dom'
 import UserContext from "../../Context/Context"
 import './updatePost.css'
+import { axiosInstance } from '../../utils';
 
 export default function UpdatePost() {
   const {userInfo, setUserInfo} = useContext(UserContext)
@@ -17,7 +17,7 @@ export default function UpdatePost() {
 
   useEffect(() => {
     const id = location.state.id
-    axios.get(`/posts/${id}`)
+    axiosInstance.get(`/posts/${id}`)
       .then(res => { 
         setPost(res.data)
     })
@@ -36,7 +36,7 @@ export default function UpdatePost() {
   function handleUpdate(e) {
     e.preventDefault();
     const id = location.state.id
-    axios.put('/posts/' + id, post, {
+    axiosInstance.put('/posts/' + id, post, {
       headers: {
         "authentication-token": userInfo.token
       }})
@@ -45,7 +45,7 @@ export default function UpdatePost() {
 
   function handleDelete() {
     const id = location.state.id
-    axios.delete('/posts/' + id, {
+    axiosInstance.delete('/posts/' + id, {
       headers: {
         "authentication-token": userInfo.token
       }})

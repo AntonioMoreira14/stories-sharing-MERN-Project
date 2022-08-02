@@ -68,6 +68,9 @@
 }
 
 @media screen and (max-height: 414px) {
+  .create-post {
+    height: 100%;
+  }
   .create-post-title {
     font-size: 20px;
     text-align: center;

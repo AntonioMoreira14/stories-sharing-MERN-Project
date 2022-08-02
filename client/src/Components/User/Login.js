@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import UserContext from '../../Context/Context'
-import axios from "axios"
 import Error from "./Error"
 import './login.css'
+import { axiosInstance } from '../../utils';
 
 export default function Login() {
   const {userInfo, setUserInfo} = useContext(UserContext);
@@ -18,7 +18,7 @@ export default function Login() {
       username: user.username,
       password: user.password
     };
-    const resLogin = await axios.post('/user/login', loginUser);
+    const resLogin = await axiosInstance.post('/user/login', loginUser);
     setUserInfo({
       token: resLogin.data.token,
       username: resLogin.data.username

@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { useState, useContext } from 'react'
 import UserContext from '../../Context/Context';
+import { axiosInstance } from '../../utils';
 import './createPost.css'
 
 export default function CreatePost() {
@@ -17,7 +17,7 @@ export default function CreatePost() {
         user: userInfo.username.username
       }
       
-      axios.post('/post', createPost, {
+      axiosInstance.post('/post', createPost, {
         headers: {
           "authentication-token": userInfo.token
         }})

@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useState, useContext } from 'react'
 import UserContext from '../../Context/Context';
 import Error from './Error';
 import './register.css'
+import { axiosInstance } from '../../utils';
 
 export default function Register() {
   const {userInfo, setUserInfo} = useContext(UserContext);
@@ -21,7 +21,7 @@ export default function Register() {
         password: newUser.password
       }
       
-     await axios.post('/user/register', createUser)
+     await axiosInstance.post('/user/register', createUser)
   
       setNewUser({
         username: "",
