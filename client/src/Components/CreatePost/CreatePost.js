@@ -20,7 +20,7 @@ export default function CreatePost() {
       axiosInstance.post('/post', createPost, {
         headers: {
           "authentication-token": userInfo.token
-        }}).then(window.location = 'https://stories-sharing-app.herokuapp.com/posts')
+        }}).then(window.location = '/userpage')
         
       setNewPost({
         title: "",

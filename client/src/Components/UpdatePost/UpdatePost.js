@@ -39,7 +39,7 @@ export default function UpdatePost() {
     axiosInstance.put('/posts/' + id, post, {
       headers: {
         "authentication-token": userInfo.token
-      }}).then(window.location = 'https://stories-sharing-app.herokuapp.com/posts')
+      }}).then(window.location = '/userpage')
   }
 
   function handleDelete() {
@@ -47,7 +47,7 @@ export default function UpdatePost() {
     axiosInstance.delete('/posts/' + id, {
       headers: {
         "authentication-token": userInfo.token
-      }}).then(window.location = 'https://stories-sharing-app.herokuapp.com/posts')
+      }}).then(window.location = '/userpage')
   }
 
   return (
