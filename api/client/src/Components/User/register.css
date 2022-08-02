@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.register{
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ),
+  url("https://img.freepik.com/free-photo/minimal-work-space-creative-flat-lay-photo-workspace-desk-with-sketchbook-wooden-pencil-copy-space-white-background-top-view-flat-lay-photography_1253-995.jpg?t=st=1658165912~exp=1658166512~hmac=5a59a0f1939428dfa1d6809380eb13b87d2d69c0f87b741cc34fb8b3806531eb&w=740");
+  background-size: cover;
+  font-family: 'Cinzel', serif;
+}
+
+.register-title {
+  font-size: 40px;
+  text-align: center;
+  color:rgb(133, 131, 131)
+}
+
+.register-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form > label {
+  margin: 10px 0;
+}
+
+.input-register {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(182, 175, 175);
+  border-radius: 15px;
+}
+
+.register-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #2E8BC0;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+@media screen and (max-height: 414px) {
+  .register {
+    height: 100%;
+  }
+  .register-title {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .register-form > label {
+    margin: 6px 0;
+  }
+  .input-register {
+    padding: 6px;
+  }
+  .register-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+}

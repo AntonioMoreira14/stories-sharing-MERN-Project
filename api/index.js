@@ -1,5 +1,6 @@
 const express = require('express');
-const connectDB = require('./db/connect')
+const connectDB = require('./db/connect');
+const path = require('path');
 require('dotenv').config();
 const app = express();
 const postsRouter = require('./routes/postsRouter');
@@ -9,6 +10,14 @@ app.use(express.json())
 
 app.use('/', postsRouter)
 app.use('/user', usersRouter)
+
+
+app.use(express.static(path.join(__dirname, './client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '././client/build', 'index.html'))
+})
+
 
 const port = process.env.PORT || 5000
 

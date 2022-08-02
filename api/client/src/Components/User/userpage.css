@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.userpage {
+  align-items: center;
+  font-family: 'Cinzel', serif;
+}
+
+.userpage-title {
+  font-size: 30px;
+  text-align: center;
+  color:rgb(114, 112, 112);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.userpage-info {
+  text-align: center;
+  padding: 20px;
+  color:rgb(114, 112, 112);
+}
+
+.user-post-title {
+  font-size: 30px;
+  text-align: center;
+  color:rgb(114, 112, 112);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-posts-list {
+  display: inline-block;
+  width: 31%;
+  margin: 1%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.user-single-post-title {
+  font-size: 18px;
+  word-break: break-word;
+  color: rgb(114, 112, 112);
+  text-decoration: none;
+}
+
+.user-single-post-title:hover {
+  color: #d6c045;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.user-posts-desc {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 390px) {
+  .user-post-title {
+    font-size: 24px;
+  }
+}

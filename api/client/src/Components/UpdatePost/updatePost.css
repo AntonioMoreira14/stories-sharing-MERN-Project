@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.update-post {
+  font-family: 'Cinzel', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-title {
+  margin: 20px;
+  font-size: 40px;
+  text-align: center;
+  color:rgb(63, 59, 59);
+}
+
+.post-desc {
+  font-size: 24px;
+  text-align: left;
+  color:rgb(133, 131, 131);
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.post-user {
+  font-size: 30px;
+  text-align: center;
+  color:rgb(63, 59, 59);
+  margin-top: 12px;
+}
+
+.post-error {
+  color: red;
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+}
+
+.line-update {
+  margin-top: 30px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-top: 1px solid rgba(20, 23, 78, 0.55);
+}
+
+.update-title {
+  margin: 30px;
+  font-size: 34px;
+  text-align: center;
+  color:rgb(63, 59, 59);
+}
+
+.input-update-title {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(182, 175, 175);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.update-desc {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(182, 175, 175);
+  border-radius: 15px;
+  resize: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.update-btn, .delete-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #2E8BC0;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  padding-right: 65px;
+  padding-left: 65px;
+}
+
+.delete-btn {
+  background-color: rgb(170, 15, 15);
+  float: right;
+}
+
+@media screen and (max-width: 911px) {
+  .post-title {
+    font-size: 26px;
+  }
+  .post-desc {
+    font-size: 14px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .post-user {
+    font-size: 20px;
+  }
+  .update-title {
+    font-size: 28px;
+  }
+  .update-btn, .delete-btn {
+    padding-right: 52px;
+    padding-left: 52px;
+  }
+}

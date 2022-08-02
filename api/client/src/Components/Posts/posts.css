@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.posts{
+  align-items: center;
+  font-family: 'Cinzel', serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.posts-title {
+  font-size: 30px;
+  text-align: center;
+  color:rgb(114, 112, 112);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-posts {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: white;
+  border: 1px solid rgb(182, 175, 175);
+  border-radius: 15px;
+}
+
+.posts-list {
+  display: inline-block;
+  width: 31%;
+  margin: 1%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.single-post-title {
+  font-size: 18px;
+  word-break: break-word;
+  color: rgb(114, 112, 112);
+  text-decoration: none;
+}
+
+.single-post-title:hover {
+  color: #d6c045;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.posts-desc {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+
+@media screen and (max-height: 414px) {
+  .create-post-title {
+    font-size: 20px;
+    text-align: center;
+  }
+  .input-create-post {
+    padding: 8px;
+  }
+  .create-post {
+    height: 120vh;
+  }
+}
+
